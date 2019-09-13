@@ -1,0 +1,22 @@
+<ion-header no-border>
+  <ion-toolbar color="dark">
+    <ion-title>
+      Pendientes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-list color="dark">
+    <ion-item *ngFor="let item of lista" detail color="dark" (click)="onClick(item)">
+      <ion-label >{{item.title}}</ion-label >
+        <ion-badge slot="end" color="tertiary">{{item.items.length}}</ion-badge>
+    </ion-item>
+    </ion-list>
+      <!-- ? fab placed to the bottom end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="tertiary">
+      <ion-fab-button color="tertiary" (click)="aLista()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>
